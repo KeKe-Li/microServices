@@ -1,4 +1,19 @@
 #### micService 
+
+* client
+
+```go
+ ./client
+```
+
+* server
+
+```go
+./server
+``` 
+ 
+
+
 * 业务逻辑逻辑
 
 服务（Service）是从业务逻辑开始的，在 Go kit 中，我们将服务以interface 作为模型
