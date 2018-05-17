@@ -6,27 +6,16 @@ import (
 	"log"
 	"net/http"
 
-	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 
-	pb "MicroService/microServices/pb"
+	"MicroService/microServices/pb"
 
 	"github.com/grpc-ecosystem/go-grpc-prometheus"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
+	"MicroService/microServices"
 )
 
-type DemoServiceServer struct {}
-
-
-func newDemoServer() *DemoServiceServer{
-	return &DemoServiceServer{}
-}
-
-
-func (s *DemoServiceServer) SayHello(ctx context.Context,request *pb.HelloRequest)(*pb.HelloResponse,error){
-	return &pb.HelloResponse{Message:fmt.Sprintf("Hello %s",request.Name)},nil
-}
 
 var (
 	// Create a metrics registry.
@@ -67,7 +56,7 @@ func main() {
 	)
 
 	// Create a new api server.
-	demoServer := newDemoServer()
+	demoServer := microServices.NewDemoServer()
 
 	// Register your service.
 	pb.RegisterDemoServiceServer(grpcServer, demoServer)

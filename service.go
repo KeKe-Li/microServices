@@ -7,17 +7,15 @@ import (
 	pb "MicroService/microServices/pb"
 )
 
-type Service interface {
-	SayHello(ctx context.Context,request interface{})(interface{},error)
-}
+type demoServiceServer struct {}
 
-type DemoServiceServer struct {}
 
-func NewDemoServer() *DemoServiceServer{
-	return &DemoServiceServer{}
+func NewDemoServer() *demoServiceServer{
+	return &demoServiceServer{}
 }
 
 
-func (s *DemoServiceServer) SayHello(ctx context.Context,request *pb.HelloRequest)(*pb.HelloResponse,error){
+func (s *demoServiceServer) SayHello(ctx context.Context,request *pb.HelloRequest)(*pb.HelloResponse,error){
 	return &pb.HelloResponse{Message:fmt.Sprintf("Hello %s",request.Name)},nil
 }
+
