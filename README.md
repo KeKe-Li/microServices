@@ -1,5 +1,7 @@
 #### micService 
 
+在microServices中结合了Prometheus和grpc使用，为入门微服务的朋友提供学习案例.
+
 * client端
 
 ```go
