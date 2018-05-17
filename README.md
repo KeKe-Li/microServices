@@ -1,18 +1,18 @@
 #### micService 
 
-* client
+* client端
 
 ```go
  ./client
 ```
 
-* server
+* server端
 
 ```go
 ./server
 ``` 
  
-
+例如在kit里面的stringsvc1中最简单的例子:
 
 * 业务逻辑逻辑
 
