@@ -6,7 +6,6 @@ import (
 	"log"
 	"net/http"
 
-
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 
