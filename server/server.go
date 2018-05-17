@@ -28,10 +28,13 @@ var (
 
 	// Create a customized counter metric.
 	//创建一个自定义计数器指标
-	customizedCounterMetric = prometheus.NewCounterVec(prometheus.CounterOpts{
+	//记录say_hello的请求数
+	customizedCounterMetric = prometheus.NewCounterVec(
+		prometheus.CounterOpts{
 		Name: "demo_server_say_hello_method_handle_count",
 		Help: "Total number of RPCs handled on the server.",
 	}, []string{"name"})
+
 )
 
 func init() {
