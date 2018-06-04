@@ -8,12 +8,12 @@ import (
 
 	"google.golang.org/grpc"
 
-	"MicroService/microServices/pb"
+	pb "MicroService/microServices/pb"
+	"MicroService/microServices"
 
 	"github.com/grpc-ecosystem/go-grpc-prometheus"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-	"MicroService/microServices"
 )
 
 
