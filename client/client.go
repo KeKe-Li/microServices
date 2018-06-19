@@ -12,10 +12,7 @@ import (
 )
 
 func main() {
-	conn,err := grpc.Dial(
-		fmt.Sprintf("localhost:%v",9093),
-		grpc.WithInsecure(),
-	)
+	conn,err := grpc.Dial(fmt.Sprintf("localhost:%v",9093), grpc.WithInsecure())
 	if err != nil{
 		log.Fatal(err)
 	}
@@ -31,7 +28,5 @@ func main() {
 	}
 
 	fmt.Println(resp)
-
-
 
 }
